@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Members</title>
+    <style>
+        /* CSS for circular images */
+        .team-member {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            border: 3px solid #fff; /* Adding a white border to make it visually smoother */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adding a shadow effect */
+            width: 200px;
+            height: 200px;
+        }
+
+        .team-member p {
+            font-size: 20px;
+            color: black;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .team-member p.small {
+            font-size: 16px;
+            color: black;
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* CSS for the layout */
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-row, .bottom-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px; /* Add space between rows */
+        }
+
+        /* Styling for the title */
+        .title {
+            font-size: 80px;
+            font-style: oblique;
+            background-color:pink;
+            color: rgb(240, 128, 191);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            border: 15px solid  rgb(240, 128, 191);
+            padding: 20px 40px; /* Add padding to make it prettier */
+            display: inline-block; /* Allow padding to work correctly */
+            border-radius: 20px; /* Add border-radius for rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+            letter-spacing: 6px;
+            margin-bottom: 40px; /* Add space between the title and the content */
+        }
+
+        /* Styling for the survey link */
+        .survey-button {
+            font-size: 18px;
+            color: black;
+            background-color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 40px; /* Add space between the survey button and the pictures */
+        }
+
+        .survey-button:hover {
+            background-color:skyblue;
+        }
+
+        /* Adjusted padding for the body */
+        body {
+            padding: 20px; /* Add padding to the body */
+            display: flex; /* Use flexbox to align the logo and title */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack content vertically */
+        }
+
+        /* Styling for the company logo */
+        .company-logo {
+            max-width: 500px; /* Increase the max-width for a bigger logo */
+            margin-bottom: 40px; /* Add space between the logo and the content */
+            border-radius: 20px; /* Add border-radius for rounded corners */
+            box-shadow: none; /* Remove the shadow effect */
+            border: none; /* Remove the border */
+        }
+
+        /* Container for the logo and title */
+        .logo-title-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px; /* Add space between the logo and the title */
+        }
+    </style>
+</head>
+<body style="background-color:lightsteelblue; text-align: center; color: black; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+
+<!-- Logo and Title Container -->
+<div class="logo-title-container">
+    <!-- Company Logo -->
+    <img src="panambi_namelogo.jpg" alt="Company Logo" class="company-logo">
+</div>
+
+<div class="content-container">
+    <!-- Title -->
+
+    <!-- Top Row -->
+    <div class="top-row">
+        <!-- Team Member 5 -->
+        <div class="team-member">
+            <a href="member5_page.html">
+                <img src="member5.jpg" alt="Team Member 5">
+                <p>Ingrid Martinez</p>
+                <p class="small">"The best is yet to come"</p>
+            </a>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="team-member">
+            <a href="member4_page.html">
+                <img src="member4.jpg" alt="Team Member 4">
+                <p>Maria Jose Brunetti</p>
+                <p class="small">"Be the change you wish to see in the world"</p>
+            </a>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="team-member">
+            <a href="member3_page.html">
+                <img src="member3.jpg" alt="Team Member 3">
+                <p>Simarene Raidan</p>
+                <p class="small">"Everything is hard before it is easy"</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="bottom-row">
+        <!-- Team Member 1 -->
+        <div class="team-member">
+            <a href="member1_page.html">
+                <img src="member1.jpg" alt="Team Member 1">
+                <p>Steffi Wedderhoff</p>
+                <p class="small">"When thinking about quitting, think about why you started"</p>
+            </a>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-member">
+            <a href="member2_page.html">
+                <img src="member2.jpg" alt="Team Member 2">
+                <p>Montserrath Rojas</p>
+                <p class="small">"The only way to do great work is to love what you do"</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Survey Button -->
+<a href="https://forms.gle/xgbVb6gT5kmXWG2K7" class="survey-button" target="_blank">Feedback</a>
+
+<script>
+    // Function to increment page view count
+    function incrementPageViewCount() {
+        if (localStorage.getItem('pageViews')) {
+            var pageViews = parseInt(localStorage.getItem('pageViews'));
+            pageViews += 1;
+            localStorage.setItem('pageViews', pageViews);
+        } else {
+            localStorage.setItem('pageViews', 1);
+        }
+    }
+
+    // Call the function to increment page view count
+    incrementPageViewCount();
+
+    // Display page view count
+    var pageViews = localStorage.getItem('pageViews');
+    document.write('<p>Page views: ' + pageViews + '</p>');
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
